@@ -4,9 +4,8 @@
  */
 'use strict';
 
-const { DataTypes, Model } = require('sequelize');
-// const sequelize = require('../../services/conndb/conndb');
-import db from '../../services/conndb/conndb.js';
+import { DataTypes, Model } from 'sequelize'
+import sequelize from '../../services/conndb/conndb.js';
 
 class TipoUser extends Model {}
 
@@ -24,11 +23,11 @@ TipoUser.init(
         },
     },
         {
-            db,
+            sequelize,
             timestamp: true,
             createAt: true,
             updateAt: 'updateTimestamp',
-            FreezeTableName: true
+            freezeTableName: true
         }
     
 );

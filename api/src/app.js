@@ -19,11 +19,13 @@ app.use(express.json());
 
 // Rutas de módulo
 import api from '../routes/prueba/prueba.route.js';
+import rutauser from '../routes/usuarios/user.route.js';
 
 // Middlewares
 
 // Rutas Exportadas
 app.use('/api/v1/prueba', api);
+app.use('/api/v1/usuarios', rutauser);
 
 // Exportamos el módulo
 export default app;
