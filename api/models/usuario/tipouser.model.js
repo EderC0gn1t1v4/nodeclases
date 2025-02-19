@@ -34,4 +34,4 @@ TipoUser.init(
 
 TipoUser.sync();
 
-module.exports = TipoUser;
+export default TipoUser;

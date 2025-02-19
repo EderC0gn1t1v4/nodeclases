@@ -6,8 +6,10 @@
 
 // Constantes del servidor:
 
-const express = require('express');
-const cors = require('cors');
+// const express = require('express');
+// const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
 
 const app = express();
 
@@ -16,11 +18,12 @@ app.use (express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Rutas de módulo
-const rutasPrueba = require('../routes/prueba/prueba.route');
+import api from '../routes/prueba/prueba.route.js';
 
 // Middlewares
 
 // Rutas Exportadas
-app.use('/api/v1/prueba', rutasPrueba);
+app.use('/api/v1/prueba', api);
 
-module.exports = app
+// Exportamos el módulo
+export default app;

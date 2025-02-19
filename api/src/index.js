@@ -4,14 +4,13 @@
 
 'use strict'
 
-const app = require('./app');
-const db = require('../services/conndb/conndb');
+import app from './app.js'
+import db from '../services/conndb/conndb.js';
+import { configDotenv } from 'dotenv';
 
-const dotenv = require('dotenv');
-dotenv.config();
+configDotenv();
 
 const port = process.env.PORT || 3001
-
 
 try {
     db.authenticate();

@@ -4,14 +4,14 @@
 
 'use strict';
 
-const express = require('express');
+import express from 'express';
 
 // Controladores:
-const pruebas = require('../../controllers/prueba/prueba.control');
+import PruebaControl from '../../controllers/prueba/prueba.control.js';
 
 // cons
 const api = express.Router();
 
-api.get('/pruebasControl', pruebas.PruebaControl);
+api.get('/pruebasControl', PruebaControl);
 
-module.exports = api;
+export default api;

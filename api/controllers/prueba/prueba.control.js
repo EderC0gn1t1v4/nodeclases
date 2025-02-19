@@ -5,18 +5,16 @@
 
 'use strict';
 
-const { mensajes } = require('../../util/msj');
+import  mensajes  from '../../util/msj.js';
 
 /* ----------------------------------------------- Controladores ----------------------------------------------- */
 const PruebaControl = async (req, res)=>{
     let now = new Date();
     let horaActual = now.toLocaleDateString('es-ES');
-    res.status(200).send({
+    res.status(200).json({
         mensajes: mensajes,
         ahora: horaActual
     });
 }
 
-module.exports = {
-    PruebaControl
-}
+export default PruebaControl

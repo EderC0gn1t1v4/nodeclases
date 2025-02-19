@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = {
+export default {
     mensajes: {
         m200: 'Petición completada con éxito',
         m400: 'Error de registro, se deben llenar los campos obligatorios',
