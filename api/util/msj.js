@@ -3,6 +3,7 @@
 export default {
     mensajes: {
         m200: 'Petición completada con éxito',
+        m204: 'Registro eliminado correctamente',
         m400: 'Error de registro, se deben llenar los campos obligatorios',
         m401: 'Petición expirada',
         m402: 'El documento adjunto no pudo ser cargado',
