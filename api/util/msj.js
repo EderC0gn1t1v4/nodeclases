@@ -1,7 +1,6 @@
 'use strict';
 
-export default {
-    mensajes: {
+const mensajes = {
         m200: 'Petición completada con éxito',
         m204: 'Registro eliminado correctamente',
         m400: 'Error de registro, se deben llenar los campos obligatorios',
@@ -16,4 +15,5 @@ export default {
         m502: 'Documentos adjuntos no permitidos',
         merr: 'Error general, valide accesos a base de datos'
     }
-}
+
+export  default mensajes;
