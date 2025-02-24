@@ -8,7 +8,7 @@ const manejoError = (error, res)=>{
         return res.status(400).json({ 'mensaje': mensajes.m400, 'data':error.message });
     }
     else {
-        return res.status(500).json({ 'mensaje': mensajes.m500, error: error });
+        return res.json({ 'mensaje': mensajes.m500, error: error });
         }
 }
 

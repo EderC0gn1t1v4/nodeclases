@@ -56,9 +56,44 @@ const getTipoUserById = async (req, res)=>{
         res.status(200).json(tipouserbyid)
 
     } catch (error) {
-        console.log(error)
         manejoError(error, res);
     }
 }
 
-export  {TipoUserCreate, getTipoUsers, getTipoUserFind, getTipoUserById}
+
+const updateTipoUser = async (req, res)=>{
+    const id = req.params.id;
+    const {nombre_tipouser} = req.body;
+    try {
+        const [tipouserupdate] = await TipoUser.update({nombre_tipouser},{
+            where : {id_tipouser:id}
+        });
+        if (tipouserupdate){
+            const tipouserUp = await TipoUser.findOne({where : {id_tipouser:id}});
+            res.status(200).json(tipouserUp);
+        }
+        
+    } catch (error) {
+        manejoError(error, res);
+    }
+}
+
+const deleteTipoUser = async (req, res)=>{
+    const id = req.params.id;
+    try {
+        const deletedtipouser = await TipoUser.destroy({
+            where : {id_tipouser:id}
+        });
+
+        if (deletedtipouser){
+            res.status(204).json(mensajes.m204)
+        } else {
+            res.status(204).json(mensajes.m404);
+        }
+        
+    } catch (error) {
+        manejoError(error, res);
+    }
+}
+
+export  {TipoUserCreate, getTipoUsers, getTipoUserFind, getTipoUserById, updateTipoUser, deleteTipoUser}
