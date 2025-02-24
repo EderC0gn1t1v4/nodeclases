@@ -53,7 +53,7 @@ const getTipoUserById = async (req, res)=>{
     try {
         const tipouserbyid = await TipoUser.findByPk(req.params.id);
         if (tipouserbyid == null) res.status(404).json({mensaje: mensajes.m404})
-        res.status(200).json({msj:'nulo'})
+        res.status(200).json(tipouserbyid)
 
     } catch (error) {
         console.log(error)

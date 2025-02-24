@@ -16,4 +16,4 @@ const mensajes = {
         merr: 'Error general, valide accesos a base de datos'
     }
 
-export  default mensajes;
+export default mensajes;
